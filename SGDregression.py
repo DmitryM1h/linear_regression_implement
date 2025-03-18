@@ -18,6 +18,5 @@ class SGDRegressor(Regression):
             error = y[num]-np.dot(self.weights_,X[num])
             grad = X[num] * -2 * error
             if any(np.abs(grad)<10**-5):
-                self.iter = iter
                 break
             self.weights_ = self.weights_ - self.eta*grad
